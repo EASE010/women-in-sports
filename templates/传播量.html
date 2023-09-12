@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    const lineStyle = {
+  width: 3,
+  opacity: 0.5
+};
+
+option = {
+  title: {
+    text: '互动与传播量（平均值）',
+    left: 'center',
+    textStyle: {
+      color: '#bbb'
+    }
+  },
+  
+    tooltip: {
+    // trigger: 'axis'
+  },
+  
+  legend: {
+    bottom: 1,
+    data: ['咪咕体育', '新浪体育', '腾讯体育','PP体育'],
+    itemGap: 20,
+    textStyle: {
+      color: '#000',
+      fontSize: 13
+    },
+    selectedMode: 'single'
+  },
+  
+  radar: {
+    indicator: [
+      { name: '转发（男）', max: 100 },
+      { name: '评论（男）', max: 150 },
+      { name: '点赞（男）', max: 1500},
+      { name: '转发（女）', max: 100 },
+      { name: '评论（女）', max: 150 },
+      { name: '点赞（女）', max: 1500}
+    ],
+    
+    shape: 'circle',
+    
+    splitNumber: 5,
+    
+    axisName: {
+      color: 'rgb(170, 170, 170)'
+    },
+    
+    splitLine: {
+      lineStyle: {
+        color: [
+          'rgba(170, 170, 170, 0.1)',
+          'rgba(170, 170, 170, 0.2)',
+          'rgba(170, 170, 170, 0.4)',
+          'rgba(170, 170, 170, 0.6)',
+          'rgba(170, 170, 170, 0.8)',
+          'rgba(170, 170, 170, 1)'
+        ].reverse()
+      }
+    },
+    
+    splitArea: {
+      show: false
+    },
+    
+    axisLine: {
+      lineStyle: {
+        color: 'rgba(170, 170, 170, 0.5)'
+      }
+    }
+  },
+  
+  series: [
+    {
+      name: '咪咕体育',
+      type: 'radar',
+      tooltip: {
+        trigger: 'item'
+      },
+      lineStyle: lineStyle,
+      data: [
+        {
+          value: [36, 53, 1260, 13,22,266],
+          name: '咪咕体育'
+        }
+      ],
+      //symbol: 'none',
+      itemStyle: {
+        color: '#FFC1C1'
+      },
+      areaStyle: {
+        opacity: 0.4
+      }
+    },
+    
+    {
+      name: '新浪体育',
+      type: 'radar',
+      tooltip: {
+        trigger: 'item'
+      },
+      lineStyle: lineStyle,
+      data: [
+        {
+          value: [50, 52, 552, 15,20,216],
+          name: '新浪体育'
+        }
+      ],
+      //symbol: 'none',
+      itemStyle: {
+        color: '#EEDD82'
+      },
+      areaStyle: {
+        opacity: 0.4
+      }
+    },
+    
+    {
+      name: '腾讯体育',
+      type: 'radar',
+      tooltip: {
+        trigger: 'item'
+      },
+      lineStyle: lineStyle,
+      data: [
+        {
+          value: [9, 10, 101, 13,148,1394],
+          name: '腾讯体育'
+        }
+      ],
+      //symbol: 'none',
+      itemStyle: {
+        color: '#FFE7BA'
+      },
+      areaStyle: {
+        opacity: 0.4
+      }
+    },
+    {
+      name: 'PP体育',
+      type: 'radar',
+      tooltip: {
+        trigger: 'item'
+      },
+      lineStyle: lineStyle,
+      data: [
+        {
+          value: [45, 18, 132, 52,64,406],
+          name: 'PP体育'
+        }
+      ],
+      //symbol: 'none',
+      itemStyle: {
+        color: '#9F79EE'
+      },
+      areaStyle: {
+        opacity: 0.4
+      }
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

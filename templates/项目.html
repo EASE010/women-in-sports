@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container7" style="height: 750px;width: 1300px;margin: 0 auto"></div>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom = document.getElementById('container7');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: "item",
+          triggerOn: "mousemove"
+  },
+  color: ['#6b31c2','#8bcbf8'],
+  series: [
+    {
+      type: 'treemap',
+      levels: [
+      {
+        itemStyle: {
+        gapWidth: 3
+      } },
+      {
+        colorMappingBy: 'value',
+        itemStyle: {
+        gapWidth: 1
+        } }
+            ],
+      data: [
+        {
+          name: '男性',
+          value: 6163,
+          children: [
+            {
+              name: '足球',
+              value: 3761
+            },
+            {
+              name: '篮球',
+              value: 1187
+            },
+            {
+              name: '网球',
+              value: 137
+            },
+            {
+              name: '水上运动',
+              value: 17
+            },
+            {
+              name: '田径',
+              value: 26
+            },
+            {
+              name: '羽毛球',
+              value: 116
+            },
+            {
+              name: '乒乓球',
+              value: 291
+            },
+            {
+              name: '体操',
+              value: 5
+            },
+            {
+              name: '排球',
+              value: 39
+            },
+            {
+              name: '台球',
+              value: 63
+            },
+            {
+              name: '冰雪运动',
+              value: 152
+            },
+            {
+              name: '电竞',
+              value: 105
+            },
+            {
+              name: '其他运动',
+              value: 148
+            },
+            {
+              name: '无关',
+              value: 116
+            }
+          ]
+        },
+        
+        {
+          name: '女性',
+          value: 997,
+          children: [
+           {
+              name: '足球',
+              value: 169
+            },
+            {
+              name: '篮球',
+              value: 36
+            },
+            {
+              name: '网球',
+              value: 102
+            },
+            {
+              name: '水上运动',
+              value: 22
+            },
+            {
+              name: '田径',
+              value: 2
+            },
+            {
+              name: '羽毛球',
+              value: 80
+            },
+            {
+              name: '乒乓球',
+              value: 170
+            },
+            {
+              name: '体操',
+              value: 2
+            },
+            {
+              name: '排球',
+              value: 126
+            },
+            {
+              name: '台球',
+              value: 1
+            },
+            {
+              name: '冰雪运动',
+              value: 154
+            },
+            {
+              name: '电竞',
+              value: 0
+            },
+            {
+              name: '其他运动',
+              value: 81
+            },
+            {
+              name: '无关',
+              value: 52
+            } 
+              ]
+            }
+          ]
+        }
+      ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

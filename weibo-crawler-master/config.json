@@ -1,0 +1,31 @@
+{
+    "user_id_list": [
+        "1744957737"
+    ],
+    "filter": 1,
+    "remove_html_tag": 1,
+    "since_date": "2022-12-01", 
+    "start_page": 42,
+    "query_list": [],
+    "write_mode": [
+        "csv"
+    ],
+    "original_pic_download": 0,
+    "retweet_pic_download": 0,
+    "original_video_download": 0,
+    "retweet_video_download": 0,
+    "download_comment": 0,
+    "comment_max_download_count": 100,
+    "download_repost": 0,
+    "repost_max_download_count": 100,
+    "result_dir_name": 0,
+    "cookie": "SUB=_2A25O5VGmDeRhGeBO61MQ8S7KyjSIHXVqJn_urDV6PUJbktANLVHNkW1NSkRrioxYKB2kExHqntYyd8IckF3iFpU-; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5qcO8wBc_arMmEv4zk3N7y5NHD95Qceh5peK27So2RWs4DqcjGx-8KxK5pe5tt; SSOLoginState=1675698678; _T_WM=19085031603; XSRF-TOKEN=f12ed9; WEIBOCN_FROM=1110006030; MLOGIN=1; M_WEIBOCN_PARAMS=oid%3D4866295244263688%26luicode%3D20000174; __bid_n=186276d57d2c761f814207; FPTOKEN=Pr8T4E2JEXtWHidZsAV5aJRoNtgPnuJHnizfki8jU/14IEPhqFQrjVQ2uSlxxHDYI30T0lBHuiKYmEohNsmrO4a1tc22sDkCdZuF1ICZZSLGv0ma4M3ejg1yWwOMgIDmg5/BvJP0drUH/Dy75NSSFy1U3jaN1sjuHjiet8eOSwa0K7i3yl3FvZF60C4tPPWwu2tVkA39dwpZkXpXxOqb2YPfsBnPBlOnV2OoYdR+ERe4wrB0SKKuG9i6yLcVqD+UaVTesuazbyC+IwGBrtjV0Uql0OElKDbo90Gl8J88B/eMn4b6RTQ/5v+LHJ09s33kuHFvdiOFSXTU+M6iWyjE9rKL7PLMvaxeyNHb2quimWfAJN4rrpV+E7+IxMLI3M6Ne2Ab/FCJBtNh/kboCkmeCQ==|pdLm4rolT1oA5a5tI944Eu3s/Ze2rLqGR10W/hNjxDM=|10|0dae1413b5fc41bbe8bf394962178b48",
+    "mysql_config": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "root",
+        "password": "123456",
+        "charset": "utf8mb4"
+    },
+    "mongodb_URI": "mongodb://[username:password@]host[:port][/[defaultauthdb][?options]]"
+}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container9" style="height: 800px;width: 1350px;
+  margin: 0 auto;padding-left: 150px;"></div>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+ <script type="text/javascript">
+    var dom = document.getElementById('container9');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove'
+      },
+  series: {
+    type: 'sankey',
+    layout: 'none',
+    levels: [
+    {
+      depth: 0,
+      itemStyle: {
+      color: '#fbb4ae'
+              },
+      lineStyle: {
+      color: 'source',
+      opacity: 0.6
+              }
+            },
+    {
+      depth: 1,
+      itemStyle: {
+      color: '#b3cde3'
+              },
+      lineStyle: {
+      color: 'source',
+      opacity: 0.6
+              }
+            },
+   {
+     depth: 2,
+     itemStyle: {
+     color: '#decbe4'
+     },
+    lineStyle: {
+    color: 'source',
+    opacity: 0.6
+              }
+            },
+            
+   {
+     depth: 3,
+     itemStyle: {
+     color: '#ccebc5'
+     },
+    lineStyle: {
+    color: 'source',
+    opacity: 0.6
+              }
+            }          
+          ],
+          
+    emphasis: {
+      focus: 'adjacency'
+    },
+    
+    data: [
+      {
+        name: '总'
+      },
+      {
+        name: '男性'
+      },
+      {
+        name: '女性'
+      },
+      {
+        name: '其他'
+      },
+      {
+        name: '男性运动员与从业者'
+      },
+      {
+        name: '男性无关人员'
+      },
+      {
+        name: '女性运动员与从业者'
+      },
+      {
+        name: '女性无关人员'
+      },
+      {
+        name: '其他运动员与从业者'
+      },
+      {
+        name: '其他无关人员'
+      },
+      {
+        name: '赛事赛场'
+      },
+      {
+        name: '个人生活'
+      },
+      {
+        name: '社交媒体'
+      },
+      {
+        name: '公关采访'
+      },
+      {
+        name: '人际关系'
+      },
+      {
+        name: '商业活动'
+      },
+      {
+        name: '花边轶事'
+      },
+      {
+        name: '外界评价'
+      },
+      {
+        name: '媒体物料'
+      },
+      {
+        name: '负面新闻'
+      }
+    ],
+    
+    
+    links: [
+      {
+        source: '总',
+        target: '男性',
+        value: 6163
+      },
+      {
+        source: '总',
+        target: '女性',
+        value: 997
+      },
+      {
+        source: '总',
+        target: '其他',
+        value: 270
+      },
+      {
+        source: '男性',
+        target: '男性运动员与从业者',
+        value: 5795
+      },
+      {
+        source: '男性',
+        target: '男性无关人员',
+        value: 368
+      },
+      {
+        source: '女性',
+        target: '女性运动员与从业者',
+        value: 877
+      },
+      {
+        source: '女性',
+        target: '女性无关人员',
+        value: 120
+      },
+      {
+        source: '其他',
+        target: '其他运动员与从业者',
+        value: 207
+      },
+      {
+        source: '其他',
+        target: '其他无关人员',
+        value: 63
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '赛事赛场',
+        value: 4123
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '个人生活',
+        value: 333
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '社交媒体',
+        value: 193
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '公关采访',
+        value: 363
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '人际关系',
+        value: 260
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '商业活动',
+        value: 121
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '花边轶事',
+        value: 47
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '外界评价',
+        value: 184
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '媒体物料',
+        value: 20
+      },
+      {
+        source: '男性运动员与从业者',
+        target: '负面新闻',
+        value: 151
+      },
+      {
+        source: '男性无关人员',
+        target: '赛事赛场',
+        value: 63
+      },
+      {
+        source: '男性无关人员',
+        target: '个人生活',
+        value: 83
+      },
+      {
+        source: '男性无关人员',
+        target: '社交媒体',
+        value: 19
+      },
+      {
+        source: '男性无关人员',
+        target: '公关采访',
+        value: 32
+      },
+      {
+        source: '男性无关人员',
+        target: '人际关系',
+        value: 21
+      },
+      {
+        source: '男性无关人员',
+        target: '商业活动',
+        value: 120
+      },
+      {
+        source: '男性无关人员',
+        target: '花边轶事',
+        value: 18
+      },
+      {
+        source: '男性无关人员',
+        target: '外界评价',
+        value: 3
+      },
+      {
+        source: '男性无关人员',
+        target: '媒体物料',
+        value: 1
+      },
+      {
+        source: '男性无关人员',
+        target: '负面新闻',
+        value: 8
+      },
+      
+      {
+        source: '女性运动员与从业者',
+        target: '赛事赛场',
+        value: 497
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '个人生活',
+        value: 120
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '社交媒体',
+        value: 54
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '公关采访',
+        value: 89
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '人际关系',
+        value: 15
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '商业活动',
+        value: 75
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '花边轶事',
+        value: 2
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '外界评价',
+        value: 23
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '媒体物料',
+        value: 0
+      },
+      {
+        source: '女性运动员与从业者',
+        target: '负面新闻',
+        value: 2
+      },
+      {
+        source: '女性无关人员',
+        target: '赛事赛场',
+        value: 5
+      },
+      {
+        source: '女性无关人员',
+        target: '个人生活',
+        value: 41
+      },
+      {
+        source: '女性无关人员',
+        target: '社交媒体',
+        value: 16
+      },
+      {
+        source: '女性无关人员',
+        target: '公关采访',
+        value: 7
+      },
+      {
+        source: '女性无关人员',
+        target: '人际关系',
+        value: 3
+      },
+      {
+        source: '女性无关人员',
+        target: '商业活动',
+        value: 33
+      },
+      {
+        source: '女性无关人员',
+        target: '花边轶事',
+        value: 9
+      },
+      {
+        source: '女性无关人员',
+        target: '外界评价',
+        value: 1
+      },
+      {
+        source: '女性无关人员',
+        target: '媒体物料',
+        value: 1
+      },
+      {
+        source: '女性无关人员',
+        target: '负面新闻',
+        value: 4
+      },
+      
+      {
+        source: '其他运动员与从业者',
+        target: '赛事赛场',
+        value: 121
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '个人生活',
+        value: 0
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '社交媒体',
+        value: 1
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '公关采访',
+        value: 47
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '人际关系',
+        value: 1
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '商业活动',
+        value: 23
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '花边轶事',
+        value: 1
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '外界评价',
+        value: 11
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '媒体物料',
+        value: 2
+      },
+      {
+        source: '其他运动员与从业者',
+        target: '负面新闻',
+        value: 0
+      },
+      {
+        source: '其他无关人员',
+        target: '赛事赛场',
+        value: 2
+      },
+      {
+        source: '其他无关人员',
+        target: '个人生活',
+        value: 2
+      },
+      {
+        source: '其他无关人员',
+        target: '社交媒体',
+        value: 1
+      },
+      {
+        source: '其他无关人员',
+        target: '公关采访',
+        value: 14
+      },
+      {
+        source: '其他无关人员',
+        target: '人际关系',
+        value: 0
+      },
+      {
+        source: '其他无关人员',
+        target: '商业活动',
+        value: 44
+      },
+      {
+        source: '其他无关人员',
+        target: '花边轶事',
+        value: 0
+      },
+      {
+        source: '其他无关人员',
+        target: '外界评价',
+        value: 0
+      },
+      {
+        source: '其他无关人员',
+        target: '媒体物料',
+        value: 0
+      },
+      {
+        source: '其他无关人员',
+        target: '负面新闻',
+        value: 0
+      },
+    ]
+  }
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

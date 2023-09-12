@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b}: {c} ({d}%)'
+  },
+  legend: {
+    data: [
+      '男性',
+      '女性',
+      '其他',
+      '咪咕体育',
+      '新浪体育',
+      '腾讯体育',
+      'PP体育',
+    ]
+  },
+  color: ['#6b31c2','#8bcbf8', '#a9e395', '#EEDD82','#FFE7BA', '#9F79EE','#FFC1C1' ],
+  series: [
+    {
+      name: '性别',
+      type: 'pie',
+      selectedMode: 'single',
+      radius: [0, '40%'],
+      label: {
+        position: 'inner',
+        fontSize: 12
+      },
+      
+      labelLine: {
+        show: false
+      },
+      
+      data: [
+        { value: 6163, name: '男性' },
+        { value: 997, name: '女性' },
+        { value: 270, name: '其他', selected: true }
+      ]
+      
+    },
+    
+    {
+      name: '来源',
+      type: 'pie',
+      radius: ['55%', '70%'],
+      labelLine: {
+        length: 30
+      },
+      
+      label: {
+        formatter: '{b|  {b}：}{c}  {per|{d}%}  ',
+        backgroundColor: '#F6F8FC',
+        borderColor: '#8C8D8E',
+        borderWidth: 1,
+        borderRadius: 4,
+        rich: {
+          b: {
+            color: '#4C5058',
+            fontSize: 12,
+            fontWeight: 'bold',
+            lineHeight: 33
+          },
+          per: {
+            color: '#fff',
+            backgroundColor: '#4C5058',
+            padding: [3, 4],
+            borderRadius: 4
+          }
+        }
+      },
+      data: [
+        { value: 2889, name: '新浪体育' },
+        { value: 554, name: '腾讯体育' }, 
+        { value: 439, name: 'PP体育' },
+        { value: 3548, name: '咪咕体育' },
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
